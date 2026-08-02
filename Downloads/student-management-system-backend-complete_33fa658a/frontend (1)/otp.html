@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify OTP · SMS University</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+<div class="auth-wrap">
+  <section class="auth-side">
+    <div class="auth-brand">
+      <div class="logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      SMS University
+    </div>
+    <div class="auth-hero">
+      <h1>Almost there.<br>Verify it's you.</h1>
+      <p>For your security we ask for a one-time code on every new sign-in. Codes expire in five minutes and lock after five wrong attempts.</p>
+      <div class="auth-features">
+        <div><i class="fa-solid fa-clock"></i> 5-minute expiry</div>
+        <div><i class="fa-solid fa-rotate"></i> Resend after 30 seconds</div>
+        <div><i class="fa-solid fa-mobile-screen-button"></i> Remember device option</div>
+      </div>
+    </div>
+    <div class="auth-footer">© 2026 SMS University ERP</div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <h2>Enter verification code</h2>
+      <p class="sub">We sent a 6-digit code to <strong id="dest">your account</strong>.</p>
+
+      <form id="otpForm">
+        <div class="otp-inputs" id="otpInputs">
+          <input maxlength="1" inputmode="numeric" autofocus>
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+        </div>
+        <div class="otp-meta">
+          <span>Expires in <strong id="timer">05:00</strong></span>
+          <a href="#" id="resendLink" class="text-muted">Resend code</a>
+        </div>
+
+        <label style="display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text-muted);margin-top:18px">
+          <input type="checkbox" id="remember"> Remember this device
+        </label>
+
+        <button class="btn btn-primary btn-block mt-2" type="submit" id="verifyBtn">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Verify &amp; Sign in
+        </button>
+      </form>
+
+      <p class="text-muted mt-3" style="font-size:13px;text-align:center">
+        <a href="login.html"><i class="fa-solid fa-angle-left"></i> Use a different account</a>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div id="toast-stack"></div>
+<script src="js/layout.js"></script>
+<script src="js/api.js"></script>
+<script src="js/pages/otp.js"></script>
+</body>
+</html>

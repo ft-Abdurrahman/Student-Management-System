@@ -1,0 +1,7 @@
+
+.tt-grid { display:grid; grid-template-columns: 110px repeat(6, 1fr); gap:8px; }
+.tt-head, .tt-slot { background: var(--surface-2); border-radius: 10px; padding: 12px; }
+.tt-head { background: var(--primary-50); color: var(--primary); font-weight: 600; text-align: center; }
+.tt-time { background: var(--surface); border:1px solid var(--border); border-radius: 10px; padding: 12px; display:grid;place-items:center; font-weight:500; font-size:13px; }
+.tt-slot .subject { font-weight: 500; font-size: 13px; }
+.tt-slot .meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; }

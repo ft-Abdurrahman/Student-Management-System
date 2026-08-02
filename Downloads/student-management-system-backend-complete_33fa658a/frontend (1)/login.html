@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · SMS University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+<div class="auth-wrap">
+  <section class="auth-side">
+    <div class="auth-brand">
+      <div class="logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      SMS University
+    </div>
+    <div class="auth-hero">
+      <h1>Welcome back.<br>Run your university,<br>not paperwork.</h1>
+      <p>One secure portal for admissions, attendance, exams, results, fees, and faculty operations — built on a modern microservices platform.</p>
+      <div class="auth-features">
+        <div><i class="fa-solid fa-shield-halved"></i> OTP-based authentication, JWT secured</div>
+        <div><i class="fa-solid fa-bolt"></i> Real-time dashboards and analytics</div>
+        <div><i class="fa-solid fa-cloud"></i> Cloud-native, Docker &amp; Kubernetes ready</div>
+      </div>
+    </div>
+    <div class="auth-footer">© 2026 SMS University ERP · v1.0.0</div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <h2>Sign in to your account</h2>
+      <p class="sub">We'll send a one-time code to verify it's really you.</p>
+
+      <div class="tabs" id="channelTabs">
+        <button class="active" data-channel="EMAIL"><i class="fa-regular fa-envelope"></i> Email</button>
+        <button data-channel="SMS"><i class="fa-solid fa-mobile-screen"></i> Mobile</button>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="field" id="emailField">
+          <label>Email address</label>
+          <div class="input-icon">
+            <i class="fa-regular fa-envelope"></i>
+            <input class="input" type="email" name="email" placeholder="you@university.edu" required>
+          </div>
+          <div class="hint">Use your institutional email address.</div>
+        </div>
+        <div class="field hidden" id="phoneField">
+          <label>Mobile number</label>
+          <div class="input-icon">
+            <i class="fa-solid fa-phone"></i>
+            <input class="input" type="tel" name="phone" placeholder="+91 9XXXXXXXXX">
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="sendBtn">
+          <i class="fa-solid fa-paper-plane"></i> Send OTP
+        </button>
+      </form>
+
+      <p class="text-muted mt-3" style="font-size:13px;text-align:center">
+        Need help? <a href="#">Contact administrator</a>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div id="toast-stack"></div>
+<script src="js/layout.js"></script>
+<script src="js/api.js"></script>
+<script src="js/pages/login.js"></script>
+</body>
+</html>

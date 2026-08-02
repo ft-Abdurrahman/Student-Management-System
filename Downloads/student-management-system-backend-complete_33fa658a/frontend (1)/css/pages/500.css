@@ -1,0 +1,2 @@
+.err{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center}
+.code{font-size:120px;font-weight:700;color:var(--danger);line-height:1}
