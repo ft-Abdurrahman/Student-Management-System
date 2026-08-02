@@ -1,0 +1,36 @@
+server:
+  port: 9002
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/sms_notification?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:""} #write user's email here after removing double quotation
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+sms:
+  notification:
+    sender: ${MAIL_USERNAME:gittechnologies0@gmail.com}
+    sender-name: "SMS University"
+    otp:
+      length: 6
+      ttl-seconds: 300
+      resend-cooldown-seconds: 30
+      max-attempts: 5

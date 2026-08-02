@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: authentication-service
+  config:
+    import: "optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:8888"
+  cloud:
+    config:
+      fail-fast: false

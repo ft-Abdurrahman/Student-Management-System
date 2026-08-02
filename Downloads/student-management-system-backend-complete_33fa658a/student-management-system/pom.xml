@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sms</groupId>
+    <artifactId>student-management-system</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>config-server</module>
+        <module>service-registry</module>
+        <module>api-gateway</module>
+        <module>notification-service</module>
+        <module>authentication-service</module>
+        <module>student-service</module>
+        <module>teacher-service</module>
+        <module>course-service</module>
+        <module>subject-service</module>
+        <module>attendance-service</module>
+        <module>exam-service</module>
+        <module>result-service</module>
+        <module>fee-service</module>
+        <module>notice-service</module>
+        <module>timetable-service</module>
+        <module>report-service</module>
+        <module>admin-dashboard-service</module>
+    </modules>
+</project>

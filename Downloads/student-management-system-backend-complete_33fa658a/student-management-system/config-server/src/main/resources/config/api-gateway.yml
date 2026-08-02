@@ -1,0 +1,70 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns:
+              - "http://localhost:3000"
+              - "http://localhost:*"
+            allowed-methods: [GET, POST, PUT, DELETE, PATCH, OPTIONS]
+            allowed-headers: "*"
+            allow-credentials: true
+            max-age: 3600
+      routes:
+        - id: auth
+          uri: lb://authentication-service
+          predicates: [Path=/api/v1/auth/**]
+        - id: students
+          uri: lb://student-service
+          predicates: [Path=/api/v1/students/**]
+          filters: [JwtValidation]
+        - id: teachers
+          uri: lb://teacher-service
+          predicates: [Path=/api/v1/teachers/**]
+          filters: [JwtValidation]
+        - id: courses
+          uri: lb://course-service
+          predicates: [Path=/api/v1/courses/**, /api/v1/departments/**]
+          filters: [JwtValidation]
+        - id: subjects
+          uri: lb://subject-service
+          predicates: [Path=/api/v1/subjects/**]
+          filters: [JwtValidation]
+        - id: attendance
+          uri: lb://attendance-service
+          predicates: [Path=/api/v1/attendance/**]
+          filters: [JwtValidation]
+        - id: exams
+          uri: lb://exam-service
+          predicates: [Path=/api/v1/exams/**]
+          filters: [JwtValidation]
+        - id: results
+          uri: lb://result-service
+          predicates: [Path=/api/v1/results/**]
+          filters: [JwtValidation]
+        - id: fees
+          uri: lb://fee-service
+          predicates: [Path=/api/v1/fees/**]
+          filters: [JwtValidation]
+        - id: notices
+          uri: lb://notice-service
+          predicates: [Path=/api/v1/notices/**]
+          filters: [JwtValidation]
+        - id: timetable
+          uri: lb://timetable-service
+          predicates: [Path=/api/v1/timetable/**]
+          filters: [JwtValidation]
+        - id: reports
+          uri: lb://report-service
+          predicates: [Path=/api/v1/reports/**]
+          filters: [JwtValidation]
+        - id: dashboard
+          uri: lb://admin-dashboard-service
+          predicates: [Path=/api/v1/dashboard/**]
+          filters: [JwtValidation]
